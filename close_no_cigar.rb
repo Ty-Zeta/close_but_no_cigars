@@ -29,6 +29,15 @@ def off_by_one(my_num, win_nums)
     if count == 3
       true
     end
+  end
+def almost_there(my_num, win_nums)
+  winning = []
+  win_nums.each do |y|
+    if off_by_one(my_num, y) == true
+      winning << y
+    end
+  end
+  winning
 end
 
 # def Winning (my_num, win_num)
