@@ -1,38 +1,35 @@
-def lottery(my_num, win_nums)
+def lottery(my_num, win_num1)
   match = []
-  win_nums.each do |win_num|
-    if win_num == my_num
+  win_num1.each do |match_num|
+    if match_num == my_num
       match << my_num
     end
   end
   match
 end
 
-def off_by_one(my_num, win_nums)
+def off_by_one(my_num, win_num1)
   count = 0
-    if my_num[0] == win_nums[0]
-      count += 1
-    else 0
-    end
-    if my_num[1] == win_nums[1]
-      count +=1
-    else 0
-    end
-    if my_num[2] == win_nums[2]
-      count +=1
-    else 0
-    end
-    if my_num[3] == win_nums[3]
-      count +=1
-    else 0
-    end
-    if count == 3
-      true
-    end
+  z=0
+  x=0
+   win_num1.length.times do
+     i=0
+    win_num1.length.times do
+      if my_num[z] == win_num1[i]
+        count += 1
+        #p count
+      end
+      #puts i
+      i+=1
   end
-def almost_there(my_num, win_nums)
+  z+=1
+end
+  count == win_num1.length - 1
+end
+
+def almost_there(my_num, win_num1)
   winning = []
-  win_nums.each do |y|
+  win_num1.each do |y|
     if off_by_one(my_num, y) == true
       winning << y
     end
@@ -40,12 +37,36 @@ def almost_there(my_num, win_nums)
   winning
 end
 
+# if my_num[i] == win_num1[i]
+#   count += 1
+# end
+#   i += 1
+# end
+
+#   if my_num[0] == win_num1[0]
+#     count += 1
+#   else 0
+#   end
+#   if my_num[1] == win_num1[1]
+#     count +=1
+#   else 0
+#   end
+#   if my_num[2] == win_num1[2]
+#     count +=1
+#   else 0
+#   end
+#   if my_num[3] == win_num1[3]
+#     count +=1
+#   else 0
+#   end
+#   if count == 3
+#     true
+#   end
+# end
+
 # def Winning (my_num, win_num)
 #   matches = []
 #
-
-
-
 
 # my_num = "1234"
 # win = ["1234", "4567", "8901", "2345", "6789"]
