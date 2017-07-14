@@ -8,7 +8,7 @@ def lottery(my_num, win_num1)
   match
 end
 
-def off_by_one(my_num, win_num1)
+def close_no_cigar(my_num, win_num1)
   count = 0
   z = 0
    win_num1.length.times do
@@ -21,41 +21,19 @@ def off_by_one(my_num, win_num1)
   end
   z += 1
 end
-  count == win_num1.length - 1
-end
-
-def all_four_wrong_order(my_num, win_num1)
-  count = 0
-  z = 0
-   win_num1.length.times do
-     i = 0
-    win_num1.length.times do
-      if my_num[z] == win_num1[i]
-        count += 1
-      end
-      i += 1
+  if count == win_num1.length
+    count
+  elsif count == win_num1.length - 1
+    count
   end
-  z += 1
-end
-  count == win_num1.length
 end
 
-def almost_there(my_num, win_num1)
-  winning = []
-  win_num1.each do |y|
-    if off_by_one(my_num, y) == true
-      winning << y
-    end
-  end
-  winning
-end
-
-def matching_but_wrong_order(my_num, win_num1)
-  winner = []
+def winning_sets(my_num, win_num1)
+  winning_set = []
   win_num1.each do |x|
-    if all_four_wrong_order(my_num, x) == true
-      winner << x
+     if close_no_cigar(my_num, x)
+        winning_set << x
     end
   end
-    winner
+  winning_set
 end
