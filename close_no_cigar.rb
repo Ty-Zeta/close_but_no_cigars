@@ -10,19 +10,18 @@ end
 
 def off_by_one(my_num, win_num1)
   count = 0
-  z=0
-  x=0
+  z = 0
    win_num1.length.times do
-     i=0
+     i = 0
     win_num1.length.times do
       if my_num[z] == win_num1[i]
         count += 1
         #p count
       end
       #puts i
-      i+=1
+      i += 1
   end
-  z+=1
+  z += 1
 end
   count == win_num1.length - 1
 end
