@@ -32,4 +32,9 @@ class TestCloseNoCigar < Minitest::Test
     win_num = ["1235", "2345", "4567", "6789", "9234", "2143", "3412"]
     assert_equal(["1235", "2345", "9234", "2143", "3412"], winning_sets(my_num, win_num))
   end
+  def test_bigger_num
+    my_num = "1234567"
+    win_num = ["7654321", "1234568", "9654321"]
+    assert_equal(["7654321", "1234568", "9654321"], winning_sets(my_num, win_num))
+  end
  end
