@@ -8,5 +8,4 @@ count = 0
       i += 1
       end
   count
-  p count
 end
